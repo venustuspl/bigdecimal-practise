@@ -37,5 +37,21 @@ public class BigDecimalEx {
         System.out.println(c);
         System.out.println(d);
         System.out.println(c.equals(d));
+
+        //rounding
+        var x = new BigDecimal("5.54");
+        BigDecimal x2 = x.setScale(1, RoundingMode.FLOOR);
+        System.out.println(x2);
+
+        var y = new BigDecimal("5.94");
+        BigDecimal y2 = y.setScale(1, RoundingMode.CEILING);
+        System.out.println(y2);
+
+        //compare
+        var z = new BigDecimal("1.6");
+        var w = new BigDecimal("1.60");
+
+        System.out.println(z.equals(w));
+        System.out.println(z.compareTo(w));
     }
 }
