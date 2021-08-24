@@ -48,10 +48,41 @@ public class BigDecimalEx {
         System.out.println(y2);
 
         //compare
+        Double valA = 123.000;
+        Double valB = 123.0;
+        System.out.println("Object compare result: " + valA.compareTo(valB));
+        System.out.println("Object equals result: " + valA.equals(valB));
         var z = new BigDecimal("1.6");
         var w = new BigDecimal("1.60");
 
         System.out.println(z.equals(w));
         System.out.println(z.compareTo(w));
+
+        // create 2 BigDecimal objects
+        BigDecimal bg1, bg2;
+
+        bg1 = new BigDecimal("10");
+        bg2 = new BigDecimal("10.0");
+
+        //create int object
+        int res;
+
+        res = bg1.compareTo(bg2); // compare bg1 with bg2
+        System.out.println(bg1.equals(bg2));
+
+        String str1 = "Both values are equal ";
+        String str2 = "First Value is greater ";
+        String str3 = "Second value is greater";
+
+        if (res == 0)
+            System.out.println(str1);
+        else if (res == 1)
+            System.out.println(str2);
+        else if (res == -1)
+            System.out.println(str3);
+
+        //compareTo() gives the ordering of objects, used typically in sorting objects in ascending or descending order while equals() will only talk about the equality and say whether they are equal or not.
+        //"myString".compareTo(null);  //Throws java.lang.NullPointerException
+        //"myString".equals(null);     //Returns false
     }
 }
